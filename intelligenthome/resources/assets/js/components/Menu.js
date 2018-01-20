@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import {Button, Icon} from 'react-materialize'
 
 export default class Menu extends Component {
 
@@ -7,10 +8,10 @@ export default class Menu extends Component {
         return (
 
             <div className="row">
-                <div className="col-md-8 col-md-offset-2">
-                    <div>
-                        <Button waves='light' node='a' href='http://www.google.com'> Open Me In New Tab </Button>
-                    </div>
+                <div className="col-sm-12">
+                    
+                    <Button waves='light' node='a' href='http://www.google.com'> Test Button </Button>
+                    
                 </div>
             </div>
         );
