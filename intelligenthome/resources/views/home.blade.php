@@ -1,14 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container ">
+    <br><br>
+<div class="container">
     <div class="row ">
-        <div class="col-md-3 col-md-2">
-                
+
+        <div class="col-md-2">
+            <div id="menu"></div>
         </div>
-        <div class="col-md-9 col-md-2">
-                
+
+        <div class="col-md-10">
+            <div id="root"></div>  
         </div>
+
     </div>
 </div>
 @endsection

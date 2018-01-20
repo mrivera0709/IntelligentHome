@@ -41,11 +41,12 @@
                 </ul>
 
             </div>
-          </nav>
+        </nav>
 </header>
 
 <main>
-        @yield('content')
+    
+    @yield('content')
         
     </div>
 </main>
