@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -29,3 +29,5 @@ Route::get('/privacy', 'PrivacyController@index')->name('privacy');
 Route::get('/affiliate', 'AffiliateController@index')->name('affiliate');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
+
+Auth::routes();
