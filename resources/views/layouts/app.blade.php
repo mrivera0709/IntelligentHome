@@ -25,7 +25,7 @@
 
         <nav class="black">
             <div class="nav-wrapper container">
-                <a href="{{ url('/home') }}" class="brand-logo textGradient1 font36"> {{ config('app.name', 'Laravel') }} </a>
+                <a href="{{ url('/home') }}" class="brand-logo font26 white-text light"> SMART TECH <span class="textGradient1 font36">find</span>ER</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
                 <ul id="nav-mobile" class="right hide-on-med-and-down links">

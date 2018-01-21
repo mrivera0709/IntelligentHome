@@ -8,9 +8,9 @@ export default class Menu extends Component {
         return (
 
             <div className="row">
-                <div className="col-sm-12">
+                <div className="col s12">
                     
-                    <Button waves='light' node='a' href='http://www.google.com'> Test Button </Button>
+                    <Button className="findButton white-text font20" waves='light' node='a' href='http://www.google.com'> Home Improvement </Button>
                     
                 </div>
             </div>

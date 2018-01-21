@@ -54591,11 +54591,11 @@ var Menu = function (_Component) {
                 { className: 'row' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'col-sm-12' },
+                    { className: 'col s12' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_2_react_materialize__["Button"],
-                        { waves: 'light', node: 'a', href: 'http://www.google.com' },
-                        ' Test Button '
+                        { className: 'findButton white-text font20', waves: 'light', node: 'a', href: 'http://www.google.com' },
+                        ' Home Improvement '
                     )
                 )
             );
