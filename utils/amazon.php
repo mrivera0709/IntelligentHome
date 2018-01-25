@@ -1,4 +1,5 @@
 <?php
+
 // Your Access Key ID, as taken from the Your Account page
 $access_key_id = "AKIAJMGK2PQDBRMQM2XQ";
 
@@ -15,9 +16,9 @@ $params = array(
     "Operation" => "ItemSearch",
     "AWSAccessKeyId" => "AKIAJMGK2PQDBRMQM2XQ",
     "AssociateTag" => "intelligen044-20",
-    "SearchIndex" => "HomeGarden",
-    "Keywords" => "smart led bulb",
-    "ResponseGroup" => "Images,ItemAttributes,Reviews",
+    "SearchIndex" => "Electronics",
+    "Keywords" => "Smart Speaker",
+    "ResponseGroup" => "Images,ItemAttributes,Offers,Reviews",
     "Availability" => "Available",
     "Condition" => "New"
 );
@@ -49,3 +50,5 @@ $signature = base64_encode(hash_hmac("sha256", $string_to_sign, $secret_key, tru
 $request_url = 'http://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
 
 echo "Signed URL: \"".$request_url."\"";
+
+?>

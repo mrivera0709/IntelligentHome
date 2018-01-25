@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use utils\amazon;
+use Illuminate\Http\amazon;
 
 class HomeController extends Controller
 {

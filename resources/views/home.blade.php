@@ -10,7 +10,10 @@
         </div>
 
         <div class="col-md-9 mainArea">
-            <div id="root"></div>  
+            <div id="root">
+                  
+            </div> 
+            <div> {{request_url}} </div> 
         </div>
 
     </div>
