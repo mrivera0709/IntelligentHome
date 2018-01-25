@@ -65,6 +65,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript">$( document ).ready(function(){
         $(".button-collapse").sideNav();
+        $('.collapsible').collapsible();
+        $('.materialboxed').materialbox();
     })</script>
     
     

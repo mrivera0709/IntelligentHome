@@ -75826,7 +75826,7 @@ exports.default = Toast;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
-var Card = function Card(props) {
+var ProductCard = function ProductCard(props) {
   return {
     render: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -75835,7 +75835,7 @@ var Card = function Card(props) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "div",
           { className: "card-image" },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "https://lorempixel.com/100/190/nature/6" })
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "https://images-na.ssl-images-amazon.com/images/I/31-7xZTklPL.jpg" })
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "div",
@@ -75844,9 +75844,14 @@ var Card = function Card(props) {
             "div",
             { className: "card-content" },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "h3",
+              null,
+              " Philips Hue White A19 60W Equivalent Smart Bulb Starter Kit (Compatible with Amazon Alexa, Apple HomeKit, and Google Assistant) "
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               "p",
               null,
-              "I am a very simple card. I am good at containing small bits of information."
+              "Enhance your home with soft white lighting, controlled remotely wherever you are. Set timers and light schedules, automating your lights to make it seem like someone is home even when you are away."
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -75864,7 +75869,7 @@ var Card = function Card(props) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Card);
+/* harmony default export */ __webpack_exports__["a"] = (ProductCard);
 
 /***/ }),
 /* 274 */
@@ -75937,7 +75942,8 @@ if (document.getElementById('menu')) {
 var Accordian = function Accordian(props) {
     return {
         componentDidMount: function componentDidMount() {
-            $('.collapsible').collapsible(); //Initialize 
+            $('.collapsible').collapsible();
+            $('.materialboxed').materialbox(); //Initialize 
         },
         render: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

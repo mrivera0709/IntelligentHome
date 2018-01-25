@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {Button, Icon, Row, Col, Container, Collapsible} from 'react-materialize'
-import Card from './Product';
+import {Button, Icon, Row, Col, Container, Collapsible, Card, CardPanel, CardTitle} from 'react-materialize'
+import ProductCard from './Product';
 
 
 
@@ -12,7 +12,7 @@ export default class Main extends Component {
 
             <div className="row">
                 <div className="col-md-12">
-                    <Card/>
+                    <ProductCard/>
 
                 </div>
             </div>

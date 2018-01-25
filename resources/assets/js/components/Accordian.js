@@ -2,7 +2,8 @@ import React from 'react';
 
 const Accordian = props => ({
     componentDidMount() { 
-    $('.collapsible').collapsible(); //Initialize 
+    $('.collapsible').collapsible();
+    $('.materialboxed').materialbox(); //Initialize 
 },
     render() {
         return (
