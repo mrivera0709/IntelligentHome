@@ -13,7 +13,7 @@
             <div id="root">
                   
             </div> 
-            <div> {{request_url}} </div> 
+            
         </div>
 
     </div>

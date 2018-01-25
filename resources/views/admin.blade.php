@@ -2,36 +2,117 @@
 
 @section('content')
 <div class="container">
+
+    <div class="row ">
+
+        <div class="col-md-3 menuContainer">
+            <div id="menu"></div>
+        </div>
+                    
+        <div class="col-md-9 mainArea">
+            <div id="root"></div>    
+        </div>
+                
+    </div>
+
     <div class="row">
+
+
         <div class="col-md-8 col-md-2">
 
-                <div class="flex-center position-ref full-height">
-                        @if (Route::has('login'))
-                            <div class="top-right links">
-                                @auth
-                                    <a href="{{ url('/home') }}">Home</a>
-                                @else
-                                    <a href="{{ route('login') }}">Login</a>
-                                    <a href="{{ route('register') }}">Register</a>
-                                @endauth
+            <div class="flex-center position-ref full-height">
+                @if (Route::has('login'))
+                    <div class="top-right links">
+                        <br><br>
+
+                        
+
+                        @auth
+                            <div class="row">
+                                <div class"col s12">
+                                    <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Category</a>
+
+                                    <!-- Dropdown Structure -->
+                                    <ul id='dropdown1' class='dropdown-content'>
+                                        <li><a href="#!">one</a></li>
+                                        <li><a href="#!">two</a></li>
+                                        <li><a href="#!">three</a></li>
+                                    </ul>
+
+                                    <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Sub-Category</a>
+
+                                    <!-- Dropdown Structure -->
+                                    <ul id='dropdown2' class='dropdown-content'>
+                                        <li><a href="#!">one</a></li>
+                                        <li><a href="#!">two</a></li>
+                                        <li><a href="#!">three</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        @endif
-            
+                            <div class="row">
+                                <div class"col m12">
+
+                                    <br>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                                            <label for="first_name">Keywords</label>
+                                        </div> 
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class"col s6">
+                                            <a class='dropdown-button btn' href='#' data-activates='dropdown3'>SearchIndex</a>
+
+                                            <!-- Dropdown Structure -->
+                                            <ul id='dropdown3' class='dropdown-content'>
+                                                <li><a href="#!">one</a></li>
+                                                <li><a href="#!">two</a></li>
+                                                <li><a href="#!">three</a></li>
+                                            </ul>
+                                        </div>
+                                    <br><br>
+                                        <div class"col s6">
+                                            <a class='dropdown-button btn' href='#' data-activates='dropdown4'>Sort</a>
+        
+                                            <!-- Dropdown Structure -->
+                                            <ul id='dropdown4' class='dropdown-content'>
+                                                <li><a href="#!">one</a></li>
+                                                <li><a href="#!">two</a></li>
+                                                <li><a href="#!">three</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                            <div class="input-field col s6">
+                                                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                                                <label for="first_name">Manufacturer</label>
+                                            </div> 
+                                        </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                                            <label for="first_name">Minimum Price</label>
+                                        </div> 
+                                    </div>           
+
+                                </div>
+                            </div>
+
+                        @else
+                            <a href="{{ route('login') }}">Login</a>
+                            <a href="{{ route('register') }}">Register</a>
+                        @endauth
                     </div>
-            
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
+                @endif            
             </div>
+            
+            
+
+
+
         </div>
     </div>
 </div>
