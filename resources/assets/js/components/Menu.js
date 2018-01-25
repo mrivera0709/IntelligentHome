@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {Button, Icon} from 'react-materialize'
-
+import {Button, Icon, Row, Col, Container, Collapsible} from 'react-materialize'
+import Accordian from './Accordian';
 export default class Menu extends Component {
-
+    
     render() {
         return (
 
             <div className="row">
                 <div className="col s12">
                     
-                    <Button className="findButton white-text font20" waves='light' node='a' href='http://www.google.com'> Home Improvement </Button>
+                <Accordian/> 
                     
                 </div>
             </div>

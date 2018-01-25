@@ -89,3 +89,21 @@ main {
 .findingButton a:focus{
   color:white;
 }
+
+.menuButton {
+  background-color: linear-gradient( right, #00A691, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
+.menuSub {
+  background-color:white;
+  color:black;
+  text-transform: uppercase
+}
+
+.menuContainer {
+  margin-top:26px;
+}
+
+.mainArea {
+  padding-left:40px;
+}
