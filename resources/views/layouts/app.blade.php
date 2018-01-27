@@ -25,7 +25,7 @@
 
         <nav class="black">
             <div class="nav-wrapper container">
-                <a href="{{ url('/home') }}" class="brand-logo textGradient1 font36"> {{ config('app.name', 'Laravel') }} </a>
+                <a href="{{ url('/home') }}" class="brand-logo font26 white-text light"> SMART TECH <span class="textGradient1 font36">find</span>ER</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
                 <ul id="nav-mobile" class="right hide-on-med-and-down links">
@@ -54,7 +54,11 @@
 <footer class="page-footer black">
     <div class="footer-copyright">
         <div class="container textGradient2 bold">
-        © 2018 COPYRIGHT | MISAEL RIVERA
+        © 2018 COPYRIGHT | MISAEL RIVERA 
+        <a class="font16" href="{{ route('about') }}">ABOUT</a>
+        <a class="font16" href="{{ route('privacy') }}">PRIVACY</a>
+        <a class="font16" href="{{ route('affiliate') }}">AFFILIATE PROGRAM</a>
+        
         </div>
     </div>
 </footer>
@@ -65,6 +69,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript">$( document ).ready(function(){
         $(".button-collapse").sideNav();
+        $('.collapsible').collapsible();
+        $('.materialboxed').materialbox();
     })</script>
     
     

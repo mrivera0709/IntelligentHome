@@ -5,14 +5,25 @@
 <div class="container">
     <div class="row ">
 
-        <div class="col-md-2">
+        <div class="col-md-3 menuContainer">
             <div id="menu"></div>
         </div>
 
-        <div class="col-md-10">
-            <div id="root"></div>  
+        <div class="col-md-9 mainArea">
+            <div id="root">
+
+            </div> 
         </div>
+
+        
 
     </div>
 </div>
+
+<script type="text/javascript">$( document ).ready(function(){
+    $(".button-collapse").sideNav();
+    $('.collapsible').collapsible();
+    $('.materialboxed').materialbox();
+    $('.modal').modal();
+})</script>
 @endsection

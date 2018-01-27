@@ -1,40 +1,24 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import {Button, Icon, Row, Col, Container, Collapsible, Card, CardPanel, CardTitle, Modal} from 'react-materialize'
+import ProductCard from './Product';
+import Accordian from './Accordian';
+
 
 export default class Main extends Component {
-
-    /*amazon = require('aws-product-api');
-    var RESTobj = new amazon("KSK00QB2utITnVrRcOLCZTEOj4hD8XH10w2CNHY3", "AKIAJMGK2PQDBRMQM2XQ", "intelligen044-20");
     
-    itemSearch() {
-        RESTobj.Query({
-            Operation: "ItemLookup",
-            ItemID: "ID1,ID2",
-            ResponseGroup: "Large"
-        }, function(err, results) {
-            if (err) {
-                err.Error: [ { Code: [ String ], Message: [ String ] } ] 
-            } else {
-                items: [ { Request: [ [ Object ] ], Item: [ [ Object ], [ Object ] ] } ] 
-            }
-        });
-    }*/
-
-
-
-
     render() {
         return (
 
-            <div className="row">
-                <div className="col-md-12">
-                    <h1 className="textGradient1">
-                    Main Component
-                    </h1>
-                </div>
-            </div>
-        );
+
+                <div className="row">
+                    <div className="col-lg-12">
+                        <ProductCard/>
+                    </div>
+                </div>  
+        )       
     }
+    
 }
 
 
@@ -42,5 +26,8 @@ export default class Main extends Component {
 */
 
 if (document.getElementById('root')) {
+    
     ReactDOM.render(<Main />, document.getElementById('root'));
-}
+};
+
+

@@ -1,3 +1,13 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
 .textGradient1 {
 	background: -webkit-linear-gradient(bottom right, #30FFAA, #009BDB);
 	background: linear-gradient(bottom right, #30FFAA, #009BDB);
@@ -17,11 +27,12 @@
 .font16 {
   font-size:16px !important;
 }
-
+.font20 {
+  font-size:20px !important;
+}
 .font26 {
   font-size:26px !important;
 }
-
 .font36 {
   font-size:36px !important;
 }
@@ -29,11 +40,70 @@
 .font46 {
   font-size:46px !important;
 }
+.font86 {
+  font-size:86px !important;
+}
+.font208 {
+  font-size:208px !important;
+}
 
 .bold {
   font-weight: bold
 }
 
+.normal {
+  font-weight: normal
+}
+
+.light {
+  font-weight: lighter
+}
+
 .pcolor {
   color:#CFEFEC
+}
+
+.w100 {
+  width:100%;
+}
+
+.welcomeTitle {
+  font-weight:lighter;
+  text-align:left;
+  color:#CFEFEC;
+  line-height:90px;
+}
+
+.titleDiv {
+  padding-left:25%;
+}
+
+.findButton {
+  background: -webkit-linear-gradient(bottom right, #00A691, #009BB3);
+  background: linear-gradient(bottom right, #00A691, #009BB3);
+  color:black;
+  font-weight:bold;
+  font-size:20px;
+}
+
+.findingButton a:focus{
+  color:white;
+}
+
+.menuButton {
+  background-color: linear-gradient( right, #00A691, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
+.menuSub {
+  background-color:white;
+  color:black;
+  text-transform: uppercase
+}
+
+.menuContainer {
+  margin-top:26px;
+}
+
+.mainArea {
+  padding-left:40px;
 }
