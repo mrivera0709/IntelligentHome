@@ -13,6 +13,8 @@
 
 Route::get('/', function () {
     return view('welcome');
+
+
 });
 
 
@@ -21,6 +23,7 @@ Route::get('/', function () {
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/test', 'HomeController@testAmazon');
 
 Route::get('/about', 'AboutController@index')->name('about');
 

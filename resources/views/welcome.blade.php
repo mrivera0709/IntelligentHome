@@ -66,6 +66,7 @@
                     <div class="title font86 welcomeTitle font208">
                         <span class="textGradient1">find</span>er
                     </div>
+                    
                 </div>
             </div>
         </div>

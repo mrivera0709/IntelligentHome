@@ -11,11 +11,19 @@
 
         <div class="col-md-9 mainArea">
             <div id="root">
-                  
+
             </div> 
-            
         </div>
+
+        
 
     </div>
 </div>
+
+<script type="text/javascript">$( document ).ready(function(){
+    $(".button-collapse").sideNav();
+    $('.collapsible').collapsible();
+    $('.materialboxed').materialbox();
+    $('.modal').modal();
+})</script>
 @endsection

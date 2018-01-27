@@ -54,7 +54,11 @@
 <footer class="page-footer black">
     <div class="footer-copyright">
         <div class="container textGradient2 bold">
-        © 2018 COPYRIGHT | MISAEL RIVERA
+        © 2018 COPYRIGHT | MISAEL RIVERA 
+        <a class="font16" href="{{ route('about') }}">ABOUT</a>
+        <a class="font16" href="{{ route('privacy') }}">PRIVACY</a>
+        <a class="font16" href="{{ route('affiliate') }}">AFFILIATE PROGRAM</a>
+        
         </div>
     </div>
 </footer>
