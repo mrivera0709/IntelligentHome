@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import {Button, Icon, Row, Col, Container, Collapsible} from 'react-materialize'
 import Accordian from './Accordian';
 
-const Menu = props => ({
-//export default class Menu extends Component {
+const Menu = ({ categories }) => ({
     
     render() {
         return (
@@ -12,7 +11,17 @@ const Menu = props => ({
             <div className="row">
                 <div className="col s12">
                     
-                <Accordian/> 
+                    <ul className="collapsible" data-collapsible="accordion">
+
+                        <li>
+                            <div className="collapsible-header menuButton font26 textGradient1">
+                                KJVDkjdhvs
+                            </div>
+                            <div className="collapsible-body menuSub">
+                                <span>Sub 1</span>
+                            </div>
+                        </li>
+                    </ul>
                     
                 </div>
             </div>

@@ -12159,111 +12159,25 @@ exports.default = PaginationButton;
 
 var Accordian = function Accordian(props) {
     return {
-        componentDidMount: function componentDidMount() {
-            $('.collapsible').collapsible();
-            $('.materialboxed').materialbox();
-            $('.modal').modal(); //Initialize 
-        },
         render: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'ul',
-                { className: 'collapsible', 'data-collapsible': 'accordion' },
+                "ul",
+                { className: "collapsible", "data-collapsible": "accordion" },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'li',
+                    "li",
                     null,
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'collapsible-header menuButton font26 textGradient1' },
-                        'Entertainment'
+                        "div",
+                        { className: "collapsible-header menuButton font26 textGradient1" },
+                        "Entertainment"
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'collapsible-body menuSub' },
+                        "div",
+                        { className: "collapsible-body menuSub" },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'span',
+                            "span",
                             null,
-                            'Sub 1'
-                        )
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'li',
-                    null,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'collapsible-header menuButton font26 textGradient1' },
-                        'Lighting'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'collapsible-body menuSub' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'span',
-                            null,
-                            'Sub 1'
-                        )
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'li',
-                    null,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'collapsible-header menuButton font26 textGradient1' },
-                        'Security'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'collapsible-body menuSub' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'span',
-                            null,
-                            'Sub 1'
-                        )
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'li',
-                    null,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'collapsible-header menuButton font26 textGradient1' },
-                        'Energy'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'collapsible-body menuSub' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'span',
-                            null,
-                            'Sub 1'
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'collapsible-body menuSub' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'span',
-                            null,
-                            'Sub 2'
-                        )
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'li',
-                    null,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'collapsible-header menuButton font26 textGradient1' },
-                        'Hubs'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'collapsible-body menuSub' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'span',
-                            null,
-                            'Sub 1'
+                            "Sub 1"
                         )
                     )
                 )
@@ -12272,7 +12186,7 @@ var Accordian = function Accordian(props) {
     };
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Accordian);
+/* unused harmony default export */ var _unused_webpack_default_export = (Accordian);
 
 /***/ }),
 /* 110 */
@@ -43171,8 +43085,7 @@ module.exports = function spread(callback) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_materialize__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_materialize___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_materialize__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Product__ = __webpack_require__(274);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Accordian__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Menu__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Menu__ = __webpack_require__(275);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43187,22 +43100,85 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-
 var Main = function (_Component) {
     _inherits(Main, _Component);
 
     function Main() {
         _classCallCheck(this, Main);
 
-        return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
+        //Initialize the state in the constructor
+        var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this));
+
+        _this.state = {
+            categories: [],
+            subcategories: [],
+            products: []
+        };
+        return _this;
     }
 
     _createClass(Main, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            var _this2 = this;
+
             $('.collapsible').collapsible();
             $('.materialboxed').materialbox();
-            $('.modal').modal(); //Initialize 
+            $('.modal').modal();
+            fetch('/api/products').then(function (response) {
+                return response.json();
+            }).then(function (products) {
+                //Fetched product is stored in the state
+                _this2.setState({ products: products });
+            });
+            /*fetch('/api/categories')
+                .then(response => {
+                    return response.json();
+                })
+                .then(products => {
+                    //Fetched product is stored in the state
+                    this.setState({ categories });
+                });
+            fetch('/api/subcategories')
+                .then(response => {
+                    return response.json();
+                })
+                .then(products => {
+                    //Fetched product is stored in the state
+                    this.setState({ subcategories });
+                });*/
+        }
+    }, {
+        key: 'renderMenu',
+        value: function renderMenu() {
+            return this.state.categories.map(function (category) {
+                return (
+                    /* When using list you need to specify a key
+                     * attribute that is unique for each list item
+                    */
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'li',
+                        { key: category.id },
+                        category.name
+                    )
+                );
+            });
+        }
+    }, {
+        key: 'renderProducts',
+        value: function renderProducts() {
+            return this.state.products.map(function (product) {
+                return (
+                    /* When using list you need to specify a key
+                     * attribute that is unique for each list item
+                    */
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        { key: product.id },
+                        product.product_name
+                    )
+                );
+            });
         }
     }, {
         key: 'render',
@@ -43217,12 +43193,12 @@ var Main = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'col-md-3 menuContainer' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Menu__["a" /* default */], null)
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Menu__["a" /* default */], null)
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'col-lg-9 mainArea' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Product__["a" /* default */], null)
+                        this.renderProducts()
                     )
                 )
             );
@@ -76024,7 +76000,7 @@ var ProductCard = function ProductCard(props) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (ProductCard);
+/* unused harmony default export */ var _unused_webpack_default_export = (ProductCard);
 
 /***/ }),
 /* 275 */
@@ -76043,10 +76019,9 @@ var ProductCard = function ProductCard(props) {
 
 
 
-var Menu = function Menu(props) {
+var Menu = function Menu(_ref) {
+    var categories = _ref.categories;
     return {
-        //export default class Menu extends Component {
-
         render: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
@@ -76054,7 +76029,28 @@ var Menu = function Menu(props) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'col s12' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Accordian__["a" /* default */], null)
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'ul',
+                        { className: 'collapsible', 'data-collapsible': 'accordion' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'li',
+                            null,
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'collapsible-header menuButton font26 textGradient1' },
+                                'KJVDkjdhvs'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'collapsible-body menuSub' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'span',
+                                    null,
+                                    'Sub 1'
+                                )
+                            )
+                        )
+                    )
                 )
             );
         }
