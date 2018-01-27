@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {Button, Icon, Row, Col, Container, Collapsible} from 'react-materialize'
 import Accordian from './Accordian';
-export default class Menu extends Component {
+
+const Menu = props => ({
+//export default class Menu extends Component {
     
     render() {
         return (
@@ -14,12 +16,12 @@ export default class Menu extends Component {
                     
                 </div>
             </div>
-        );
-    }
-}
+    )}
+});
 
 
-
+export default Menu;
+/*
 if (document.getElementById('menu')) {
     ReactDOM.render(<Menu />, document.getElementById('menu'));
-}
+}*/

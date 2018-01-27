@@ -5,11 +5,7 @@
 <div class="container">
     <div class="row ">
 
-        <div class="col-md-3 menuContainer">
-            <div id="menu"></div>
-        </div>
-
-        <div class="col-md-9 mainArea">
+        <div class="col-md-12">
             <div id="root">
 
             </div> 

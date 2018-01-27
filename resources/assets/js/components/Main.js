@@ -3,19 +3,28 @@ import ReactDOM from 'react-dom';
 import {Button, Icon, Row, Col, Container, Collapsible, Card, CardPanel, CardTitle, Modal} from 'react-materialize'
 import ProductCard from './Product';
 import Accordian from './Accordian';
-
+import Menu from './Menu';
 
 export default class Main extends Component {
-    
+    componentDidMount() { 
+        $('.collapsible').collapsible();
+        $('.materialboxed').materialbox();
+        $('.modal').modal(); //Initialize 
+    }
     render() {
+        
         return (
-
-
+            <div>
                 <div className="row">
-                    <div className="col-lg-12">
+                    <div className="col-md-3 menuContainer">
+                        <Menu />
+                    </div>
+
+                    <div className="col-lg-9 mainArea">
                         <ProductCard/>
                     </div>
-                </div>  
+                </div> 
+            </div>    
         )       
     }
     
