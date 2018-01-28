@@ -43168,10 +43168,67 @@ var Main = function (_Component) {
                     /* When using list you need to specify a key
                      * attribute that is unique for each list item
                     */
+
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'p',
-                        { key: product.id },
-                        product.product_name
+                        'div',
+                        { className: 'col s12 m6', key: product.id },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'p',
+                            { className: 'textGradient1' },
+                            product.product_brand
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'h4',
+                            { className: 'header pcolor' },
+                            product.product_name,
+                            ' '
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'card horizontal' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'card-image' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: product.image_url })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'card-stacked' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'card-content' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'p',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'span',
+                                            { className: ' textGradient1' },
+                                            'Price Range : '
+                                        ),
+                                        product.price
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'p',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'span',
+                                            { className: ' textGradient1' },
+                                            'Our Rating :  '
+                                        ),
+                                        product.finder_rating
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'card-action textGradient1' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { href: '#' },
+                                        'This is a link'
+                                    )
+                                )
+                            )
+                        )
                     )
                 );
             });
