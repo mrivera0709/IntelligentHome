@@ -43122,15 +43122,13 @@ var Main = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            $('.collapsible').collapsible();
-            $('.materialboxed').materialbox();
-            $('.modal').modal();
             fetch('/api/products').then(function (response) {
                 return response.json();
             }).then(function (products) {
                 //Fetched product is stored in the state
                 _this2.setState({ products: products });
             });
+
             /*fetch('/api/categories')
                 .then(response => {
                     return response.json();
@@ -43148,22 +43146,20 @@ var Main = function (_Component) {
                     this.setState({ subcategories });
                 });*/
         }
-    }, {
-        key: 'renderMenu',
-        value: function renderMenu() {
-            return this.state.categories.map(function (category) {
+        /*
+        renderMenu() {
+            return this.state.categories.map(category => {
                 return (
                     /* When using list you need to specify a key
                      * attribute that is unique for each list item
-                    */
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'li',
-                        { key: category.id },
-                        category.name
-                    )
-                );
-            });
-        }
+                    */ /*
+                       <li key={category.id} >
+                        { category.name } 
+                       </li>      
+                       );
+                       })
+                       } */
+
     }, {
         key: 'renderProducts',
         value: function renderProducts() {
@@ -76038,7 +76034,7 @@ var Menu = function Menu(_ref) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'collapsible-header menuButton font26 textGradient1' },
-                                'KJVDkjdhvs'
+                                'Menu 1'
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',

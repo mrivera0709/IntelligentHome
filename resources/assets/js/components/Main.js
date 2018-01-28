@@ -17,17 +17,18 @@ export default class Main extends Component {
     }
 
     componentDidMount() {
-        $('.collapsible').collapsible();
-        $('.materialboxed').materialbox();
-        $('.modal').modal(); 
+
         fetch('/api/products')
             .then(response => {
                 return response.json();
+                
             })
             .then(products => {
                 //Fetched product is stored in the state
                 this.setState({ products });
             });
+
+            
         /*fetch('/api/categories')
             .then(response => {
                 return response.json();
@@ -45,19 +46,19 @@ export default class Main extends Component {
                 this.setState({ subcategories });
             });*/
     }
-    
+    /*
     renderMenu() {
         return this.state.categories.map(category => {
             return (
                 /* When using list you need to specify a key
                  * attribute that is unique for each list item
-                */
+                */ /*
                 <li key={category.id} >
                     { category.name } 
                 </li>      
             );
         })
-    }
+    } */
 
     renderProducts() {
         return this.state.products.map(product => {

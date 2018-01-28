@@ -16,10 +16,4 @@
     </div>
 </div>
 
-<script type="text/javascript">$( document ).ready(function(){
-    $(".button-collapse").sideNav();
-    $('.collapsible').collapsible();
-    $('.materialboxed').materialbox();
-    $('.modal').modal();
-})</script>
 @endsection

@@ -15,7 +15,7 @@ const Menu = ({ categories }) => ({
 
                         <li>
                             <div className="collapsible-header menuButton font26 textGradient1">
-                                KJVDkjdhvs
+                                Menu 1
                             </div>
                             <div className="collapsible-body menuSub">
                                 <span>Sub 1</span>
