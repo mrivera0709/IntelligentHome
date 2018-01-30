@@ -12149,46 +12149,7 @@ PaginationButton.propTypes = {
 exports.default = PaginationButton;
 
 /***/ }),
-/* 109 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-
-
-var Accordian = function Accordian(props) {
-    return {
-        render: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "ul",
-                { className: "collapsible", "data-collapsible": "accordion" },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "li",
-                    null,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "collapsible-header menuButton font26 textGradient1" },
-                        "Entertainment"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "collapsible-body menuSub" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "span",
-                            null,
-                            "Sub 1"
-                        )
-                    )
-                )
-            );
-        }
-    };
-};
-
-/* unused harmony default export */ var _unused_webpack_default_export = (Accordian);
-
-/***/ }),
+/* 109 */,
 /* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43082,10 +43043,13 @@ module.exports = function spread(callback) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_materialize__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_materialize___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_materialize__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Product__ = __webpack_require__(274);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Menu__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_materialize__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_materialize___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_materialize__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Product__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Menu__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Subcategory__ = __webpack_require__(287);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43093,6 +43057,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -43112,7 +43078,9 @@ var Main = function (_Component) {
         _this.state = {
             categories: [],
             subcategories: [],
-            products: []
+            products: [],
+            currentProduct: null,
+            currentCategory: null
         };
         return _this;
     }
@@ -43122,47 +43090,93 @@ var Main = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
+            /* fetch API in action */
             fetch('/api/products').then(function (response) {
                 return response.json();
             }).then(function (products) {
                 //Fetched product is stored in the state
                 _this2.setState({ products: products });
+                console.log('Products : ');
+                console.log(products);
             });
-
-            /*fetch('/api/categories')
-                .then(response => {
-                    return response.json();
-                })
-                .then(products => {
-                    //Fetched product is stored in the state
-                    this.setState({ categories });
-                });
-            fetch('/api/subcategories')
-                .then(response => {
-                    return response.json();
-                })
-                .then(products => {
-                    //Fetched product is stored in the state
-                    this.setState({ subcategories });
-                });*/
+            fetch('/api/category').then(function (response) {
+                return response.json();
+            }).then(function (categories) {
+                //Fetched product is stored in the state
+                _this2.setState({ categories: categories });
+                console.log('Categories : ');
+                console.log(categories);
+            });
+            fetch('/api/subcategory').then(function (response) {
+                return response.json();
+            }).then(function (subcategories) {
+                //Fetched product is stored in the state
+                _this2.setState({ subcategories: subcategories });
+                console.log('Subcategories : ');
+                console.log(subcategories);
+            });
         }
-        /*
-        renderMenu() {
-            return this.state.categories.map(category => {
-                return (
-                    /* When using list you need to specify a key
-                     * attribute that is unique for each list item
-                    */ /*
-                       <li key={category.id} >
-                        { category.name } 
-                       </li>      
-                       );
-                       })
-                       } */
 
+        /*
+            componentDidMount() {
+                axios.all([
+                    axios.get('/api/products'),
+                    axios.get('/api/category'),
+                    axios.get('/api/subcategory')
+                ]).then(axios.spread(function (products, categories, subcategories) {
+                    }))
+                    .catch(function(res) {
+                        console.log( res )
+                    })
+        
+            } */
+
+    }, {
+        key: 'renderSubCategory',
+        value: function renderSubCategory() {
+            return this.state.subcategories.map(function (subcategory) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'collapsible-body white' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'span',
+                        null,
+                        subcategory.subcategory_name
+                    )
+                );
+            });
+        }
+    }, {
+        key: 'renderCategory',
+        value: function renderCategory() {
+            var _this3 = this;
+
+            return this.state.categories.map(function (category) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'collapsible-header menuButton font26 textGradient1', key: category.id, onClick: function onClick() {
+                                return _this3.handleClick(category);
+                            } },
+                        category.category_name
+                    ),
+                    _this3.renderSubCategory()
+                );
+            });
+        }
+    }, {
+        key: 'handleClick',
+        value: function handleClick(category) {
+            //handleClick is used to set the state
+            this.setState({ currentCategory: category });
+        }
     }, {
         key: 'renderProducts',
         value: function renderProducts() {
+            var _this4 = this;
+
             return this.state.products.map(function (product) {
                 return (
                     /* When using list you need to specify a key
@@ -43179,7 +43193,9 @@ var Main = function (_Component) {
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'h4',
-                            { className: 'header pcolor' },
+                            { className: 'header pcolor', onClick: function onClick() {
+                                    return _this4.handleClick(product);
+                                } },
                             product.product_name,
                             ' '
                         ),
@@ -43189,7 +43205,7 @@ var Main = function (_Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'card-image' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: product.image_url })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'materialboxed', src: product.image_url })
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
@@ -43218,20 +43234,18 @@ var Main = function (_Component) {
                                         product.finder_rating
                                     )
                                 ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'div',
-                                    { className: 'card-action textGradient1' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'a',
-                                        { href: '#' },
-                                        'This is a link'
-                                    )
-                                )
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'card-action textGradient1' })
                             )
                         )
                     )
                 );
             });
+        }
+    }, {
+        key: 'handleClick',
+        value: function handleClick(product) {
+            //handleClick is used to set the state
+            this.setState({ currentProduct: product });
         }
     }, {
         key: 'render',
@@ -43245,8 +43259,20 @@ var Main = function (_Component) {
                     { className: 'row' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'col-md-3 menuContainer' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Menu__["a" /* default */], null)
+                        { className: 'col-md-3 mainArea' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'row' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'col s12' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'ul',
+                                    { className: 'collapsible', 'data-collapsible': 'accordion' },
+                                    this.renderCategory()
+                                )
+                            )
+                        )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
@@ -76006,51 +76032,52 @@ exports.default = Toast;
 
 
 
-var ProductCard = function ProductCard(props) {
-  return {
-    render: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'card horizontal col s6' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'card-image' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'responsive-img materialboxed', src: 'https://images-na.ssl-images-amazon.com/images/I/31-7xZTklPL.jpg' })
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'card-stacked' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'card-content' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'h5',
-                null,
-                ' Philips Hue White A19 60W Equivalent Smart Bulb Starter Kit (Compatible with Amazon Alexa, Apple HomeKit, and Google Assistant) '
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'p',
-                null,
-                '69.99'
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'card-action' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                { href: '#' },
-                'This is a link'
-              )
-            )
-          )
-        )
-      );
-    }
-  };
+var ProductCard = function ProductCard(_ref) {
+  var product = _ref.product;
+
+
+  //if the props product is null, return Product doesn't exist
+  if (!product) {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      null,
+      ' '
+    );
+  }
+
+  //Else, display the product data
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'div',
+    null,
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'h2',
+      null,
+      ' ',
+      product.product_name,
+      ' '
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'p',
+      null,
+      ' ',
+      product.details,
+      ' '
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'h3',
+      null,
+      ' Status ',
+      product.finder_review ? 'Available' : 'Out of stock',
+      ' '
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'h3',
+      null,
+      ' Price : ',
+      product.price,
+      ' '
+    )
+  );
 };
 
 /* unused harmony default export */ var _unused_webpack_default_export = (ProductCard);
@@ -76066,51 +76093,93 @@ var ProductCard = function ProductCard(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_materialize__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_materialize___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_materialize__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Accordian__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Subcategory__ = __webpack_require__(287);
 
 
 
 
 
 var Menu = function Menu(_ref) {
-    var categories = _ref.categories;
-    return {
-        render: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'row' },
+    var subcategories = _ref.subcategories;
+
+
+    if (!subcategory) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            null,
+            ' '
+        );
+    }
+
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'row' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'col s12' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'ul',
+                { className: 'collapsible', 'data-collapsible': 'accordion' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'col s12' },
+                    'li',
+                    null,
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'ul',
-                        { className: 'collapsible', 'data-collapsible': 'accordion' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'li',
-                            null,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'collapsible-header menuButton font26 textGradient1' },
-                                'Menu 1'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'collapsible-body menuSub' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'span',
-                                    null,
-                                    'Sub 1'
-                                )
-                            )
-                        )
+                        'div',
+                        { className: 'collapsible-header menuButton font26 textGradient1', value: 1 },
+                        'Entertainment'
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'collapsible-header menuButton font26 textGradient1', value: 2 },
+                        'Lighting'
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'collapsible-header menuButton font26 textGradient1', value: 3 },
+                        'Security'
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'collapsible-header menuButton font26 textGradient1', value: 4 },
+                        'Energy'
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'collapsible-header menuButton font26 textGradient1', value: 5 },
+                        'Hubs'
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'collapsible-header menuButton font26 textGradient1', value: 6 },
+                        'Other'
                     )
                 )
-            );
-        }
-    };
+            )
+        )
+    );
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Menu);
+/* unused harmony default export */ var _unused_webpack_default_export = (Menu);
 /*
 if (document.getElementById('menu')) {
     ReactDOM.render(<Menu />, document.getElementById('menu'));
@@ -76121,6 +76190,42 @@ if (document.getElementById('menu')) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+var Subcategory = function Subcategory(_ref) {
+    var subcategory = _ref.subcategory;
+
+
+    if (subcategory.category_id === category.id) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "div",
+        { className: "collapsible-body" },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "span",
+            null,
+            subcategory.subcategory_name
+        )
+    );
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = (Subcategory);
 
 /***/ })
 /******/ ]);

@@ -1,36 +1,26 @@
 import React from 'react';
 import {Button, Icon, Row, Col, Container, Collapsible, Card, CardPanel, CardTitle, Modal} from 'react-materialize';
 
-const ProductCard = props => ({
-
-    render() {
-        return (
-        <div>
-          <div className="card horizontal col s6">
-            <div className="card-image">
-              <img className="responsive-img materialboxed" src="https://images-na.ssl-images-amazon.com/images/I/31-7xZTklPL.jpg"></img>
-            </div>
-            <div className="card-stacked">
-              <div className="card-content">
-                <h5> Philips Hue White A19 60W Equivalent Smart Bulb Starter Kit (Compatible with Amazon Alexa, Apple HomeKit, and Google Assistant) </h5>
-                
-                <p>69.99</p>
-  
-                
-
-              </div>
-              <div className="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-          
+const ProductCard = ({product}) => {
 
 
-          
-        )}
-});
+
+//if the props product is null, return Product doesn't exist
+if(!product) {
+  return(<div> </div>);
+}
+
+//Else, display the product data
+return(  
+  <div > 
+    <h2> {product.product_name} </h2>
+    <p> {product.details} </p>
+    <h3> Status {product.finder_review ? 'Available' : 'Out of stock'} </h3>
+    <h3> Price : {product.price} </h3>
+    
+  </div>
+
+)
+}
 
 export default ProductCard;

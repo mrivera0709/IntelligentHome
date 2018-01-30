@@ -1,32 +1,57 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {Button, Icon, Row, Col, Container, Collapsible} from 'react-materialize'
-import Accordian from './Accordian';
+import Subcategory from './Subcategory';
 
-const Menu = ({ categories }) => ({
+const Menu = ({ subcategories }) => {
     
-    render() {
-        return (
+if(!subcategory) {
+    return(<div> </div>);
+}
 
-            <div className="row">
-                <div className="col s12">
-                    
-                    <ul className="collapsible" data-collapsible="accordion">
+return (
 
-                        <li>
-                            <div className="collapsible-header menuButton font26 textGradient1">
-                                Menu 1
-                            </div>
-                            <div className="collapsible-body menuSub">
-                                <span>Sub 1</span>
-                            </div>
-                        </li>
-                    </ul>
+    <div className="row">
+        <div className="col s12">
                     
-                </div>
-            </div>
-    )}
-});
+            <ul className="collapsible" data-collapsible="accordion">
+
+                <li>
+                    <div className="collapsible-header menuButton font26 textGradient1" value={1}>
+                    Entertainment
+                    </div>
+                </li>
+                <li>
+                    <div className="collapsible-header menuButton font26 textGradient1" value={2}>
+                    Lighting
+                    </div>
+                </li>
+                <li>
+                    <div className="collapsible-header menuButton font26 textGradient1" value={3}>
+                    Security
+                    </div>
+                </li>
+                <li>
+                    <div className="collapsible-header menuButton font26 textGradient1" value={4}>
+                    Energy
+                    </div>
+                </li>
+                <li>
+                    <div className="collapsible-header menuButton font26 textGradient1" value={5}>
+                    Hubs
+                    </div>
+                </li>
+                <li>
+                    <div className="collapsible-header menuButton font26 textGradient1" value={6}>
+                    Other
+                    </div>
+                </li>
+            </ul>
+                    
+        </div>
+    </div>
+    )
+}
 
 
 export default Menu;

@@ -71,6 +71,7 @@
         $(".button-collapse").sideNav();
         $('.collapsible').collapsible();
         $('.materialboxed').materialbox();
+        $('.modal').modal();
     })</script>
     
     
