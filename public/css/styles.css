@@ -17,11 +17,10 @@ main {
 }
 
 .textGradient2 {
-	background: -webkit-linear-gradient(bottom right, #00A691, #009BB3);
-	background: linear-gradient(bottom right, #00A691, #009BB3);
+	background: -webkit-linear-gradient(bottom, #30FFAA, #009BDB);
+	background: linear-gradient(bottom, #30FFAA, #009BDB);
 	-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
 
 .font16 {
@@ -36,7 +35,6 @@ main {
 .font36 {
   font-size:36px !important;
 }
-
 .font46 {
   font-size:46px !important;
 }

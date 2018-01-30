@@ -43048,8 +43048,6 @@ module.exports = function spread(callback) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_materialize__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_materialize___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_materialize__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Product__ = __webpack_require__(274);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Menu__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Subcategory__ = __webpack_require__(287);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43057,8 +43055,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
 
 
 
@@ -43090,11 +43086,9 @@ var Main = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            /* fetch API in action */
             fetch('/api/products').then(function (response) {
                 return response.json();
             }).then(function (products) {
-                //Fetched product is stored in the state
                 _this2.setState({ products: products });
                 console.log('Products : ');
                 console.log(products);
@@ -43102,7 +43096,6 @@ var Main = function (_Component) {
             fetch('/api/category').then(function (response) {
                 return response.json();
             }).then(function (categories) {
-                //Fetched product is stored in the state
                 _this2.setState({ categories: categories });
                 console.log('Categories : ');
                 console.log(categories);
@@ -43110,27 +43103,11 @@ var Main = function (_Component) {
             fetch('/api/subcategory').then(function (response) {
                 return response.json();
             }).then(function (subcategories) {
-                //Fetched product is stored in the state
                 _this2.setState({ subcategories: subcategories });
                 console.log('Subcategories : ');
                 console.log(subcategories);
             });
         }
-
-        /*
-            componentDidMount() {
-                axios.all([
-                    axios.get('/api/products'),
-                    axios.get('/api/category'),
-                    axios.get('/api/subcategory')
-                ]).then(axios.spread(function (products, categories, subcategories) {
-                    }))
-                    .catch(function(res) {
-                        console.log( res )
-                    })
-        
-            } */
-
     }, {
         key: 'renderSubCategory',
         value: function renderSubCategory() {
@@ -43169,7 +43146,6 @@ var Main = function (_Component) {
     }, {
         key: 'handleClick',
         value: function handleClick(category) {
-            //handleClick is used to set the state
             this.setState({ currentCategory: category });
         }
     }, {
@@ -43178,64 +43154,63 @@ var Main = function (_Component) {
             var _this4 = this;
 
             return this.state.products.map(function (product) {
-                return (
-                    /* When using list you need to specify a key
-                     * attribute that is unique for each list item
-                    */
-
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col s12 m6', key: product.id },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        { className: 'textGradient1' },
+                        ' ',
+                        product.product_brand
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'h4',
+                        { className: 'header pcolor', onClick: function onClick() {
+                                return _this4.handleClick(product);
+                            } },
+                        product.product_name,
+                        ' '
+                    ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'col s12 m6', key: product.id },
+                        { className: 'card horizontal' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            { className: 'textGradient1' },
-                            product.product_brand
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'h4',
-                            { className: 'header pcolor', onClick: function onClick() {
-                                    return _this4.handleClick(product);
-                                } },
-                            product.product_name,
-                            ' '
+                            'div',
+                            { className: 'card-image' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'materialboxed', src: product.image_url })
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'card horizontal' },
+                            { className: 'card-stacked' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
-                                { className: 'card-image' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'materialboxed', src: product.image_url })
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'card-stacked' },
+                                { className: 'card-content' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'div',
-                                    { className: 'card-content' },
+                                    'p',
+                                    null,
+                                    ' ',
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'p',
-                                        null,
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'span',
-                                            { className: ' textGradient1' },
-                                            'Price Range : '
-                                        ),
-                                        product.price
+                                        'span',
+                                        { className: ' textGradient1' },
+                                        'Price Range : '
                                     ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'p',
-                                        null,
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'span',
-                                            { className: ' textGradient1' },
-                                            'Our Rating :  '
-                                        ),
-                                        product.finder_rating
-                                    )
+                                    product.price,
+                                    ' '
                                 ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'card-action textGradient1' })
-                            )
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'p',
+                                    null,
+                                    ' ',
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'span',
+                                        { className: ' textGradient1' },
+                                        'Our Rating :  '
+                                    ),
+                                    product.finder_rating,
+                                    ' '
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'card-action textGradient1' })
                         )
                     )
                 );
@@ -43265,7 +43240,7 @@ var Main = function (_Component) {
                             { className: 'row' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
-                                { className: 'col s12' },
+                                { className: 'col-sm-12' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'ul',
                                     { className: 'collapsible', 'data-collapsible': 'accordion' },
@@ -43276,7 +43251,7 @@ var Main = function (_Component) {
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'col-lg-9 mainArea' },
+                        { className: 'col-md-9 mainArea' },
                         this.renderProducts()
                     )
                 )
@@ -43287,12 +43262,10 @@ var Main = function (_Component) {
     return Main;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* The if statement is required so as to Render the component on pages that have a div with an ID of "root";  
-*/
-
 /* unused harmony default export */ var _unused_webpack_default_export = (Main);
-if (document.getElementById('root')) {
 
+
+if (document.getElementById('root')) {
     __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Main, null), document.getElementById('root'));
 };
 
