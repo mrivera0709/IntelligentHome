@@ -17,12 +17,14 @@ main {
 }
 
 .textGradient2 {
-	background: -webkit-linear-gradient(bottom, #30FFAA, #009BDB);
-	background: linear-gradient(bottom, #30FFAA, #009BDB);
+	background: -webkit-linear-gradient(bottom right, #30FFAA, #009BDB, #009BDB);
+	background: linear-gradient(bottom right, #30FFAA, #009BDB, #009BDB);
 	-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.font12 {
+  font-size:12px !important;
+}
 .font16 {
   font-size:16px !important;
 }
@@ -31,6 +33,9 @@ main {
 }
 .font26 {
   font-size:26px !important;
+}
+.font27 {
+  font-size:27px !important;
 }
 .font36 {
   font-size:36px !important;
@@ -48,11 +53,9 @@ main {
 .bold {
   font-weight: bold
 }
-
 .normal {
   font-weight: normal
 }
-
 .light {
   font-weight: lighter
 }
@@ -63,6 +66,13 @@ main {
 
 .w100 {
   width:100%;
+}
+.padding20 {
+  padding-left:20px;
+}
+.noSidePadding {
+  padding-left:0;
+  padding-right:0;
 }
 
 .welcomeTitle {

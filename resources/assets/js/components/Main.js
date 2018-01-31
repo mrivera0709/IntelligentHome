@@ -14,7 +14,8 @@ export default class Main extends Component {
             subcategories: [],
             products: [],
             currentProduct: null,
-            currentCategory: null
+            currentCategory: null,
+            currentSubcategory: null
         }
     }
     componentDidMount() {
@@ -41,23 +42,33 @@ export default class Main extends Component {
             });
     }
 
-    renderSubCategory() {
+    renderSubCategory(currentCategory) {
         return this.state.subcategories.map(subcategory => {
+            /*console.log('Category Id :' + currentCategory)
+            console.log('Subcategory Id :' + subcategory.category_id)*/
+            if(currentCategory === subcategory.category_id)
+            
             return (
                 <div className="collapsible-body white">
-                    <span>{subcategory.subcategory_name}</span>
+                    <span key={subcategory.id} onClick={() =>this.handleClick(subcategory)}>{subcategory.subcategory_name}</span>
                 </div>   
             );})
     }
 
+    handleClick(subcategory) {
+        this.setState({currentSubcategory:subcategory});
+    }
+
     renderCategory() {
         return this.state.categories.map(category => {
+            let catID = category.id
+            console.log('CatID : ' + catID)
             return (
                 <li>
-                    <div className="collapsible-header menuButton font26 textGradient1" key={category.id} onClick={() =>this.handleClick(category)}>
+                    <div className="collapsible-header menuButton font20 textGradient1" key={category.id} onClick={() =>this.handleClick(category)}>
                         { category.category_name }
                     </div>
-                    { this.renderSubCategory() }
+                    { this.renderSubCategory(catID) }
                 </li>       
             );})
     }
@@ -68,6 +79,9 @@ export default class Main extends Component {
 
     renderProducts() {
         return this.state.products.map(product => {
+            let subCatID = this.state.currentSubcategory
+            console.log('SubCatID : ' + subCatID)
+            if( subCatID === product.subcategory_id)
             return (
                 <div className="col s12 m6" key={product.id} >
                     <p className='textGradient1'> { product.product_brand }</p>
@@ -103,9 +117,9 @@ export default class Main extends Component {
         return (
             <div>
                 <div className="row">
-                    <div className="col-md-3 mainArea">
+                    <div className="col-md-3 noSidePadding">
                         <div className="row">
-                            <div className="col-sm-12">    
+                            <div className="col-md-12 noSidePadding">    
                                 <ul className="collapsible" data-collapsible="accordion">
                                 { this.renderCategory() }
                                 </ul>  
