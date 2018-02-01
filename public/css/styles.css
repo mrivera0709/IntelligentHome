@@ -110,6 +110,7 @@ main {
   color:black;
   font-weight:bold;
   font-size:20px;
+  
 }
 
 .findingButton a:focus{
@@ -146,3 +147,109 @@ img {
   background-color:rgb(44, 44, 44, 0.5) !important;
 }
 
+a:focus {
+  color: white;
+  text-decoration: none !important;
+}
+
+.btn-link:focus {
+  color: white;
+  text-decoration: none !important;
+  background-color: transparent;
+}
+
+a:visited {
+  text-decoration: none !important;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  
+  .findingButton, .hideSmall {
+    display:none;
+  }
+
+  .findButton {
+    float: right;
+    margin-right:20px
+    
+  }
+}
+
+
+
+@media only screen and (max-width: 900px) {
+  
+  .font208 {
+    font-size:175px !important; 
+  }
+
+
+  .title {
+    font-size:70px;
+  }
+
+  .titleDiv {
+    padding-left:20%;
+  }
+
+  .welcomeTitle {
+
+    line-height:70px;
+  }
+
+  .font27 {
+    font-size:22px !important;
+  }
+
+  .findButton {
+    float: right;
+    margin-right:20px
+    
+  }
+
+  .findingButton, .hideSmall {
+    display:none;
+  }
+  
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  
+
+
+  .font208 {
+    font-size:138px !important; 
+  }
+
+  .title {
+    font-size:55px;
+  }
+
+  .titleDiv {
+    padding-left:10%;
+  }
+
+  .welcomeTitle {
+
+    line-height:52px;
+  }
+
+  .font27 {
+    font-size:18px !important;
+  }
+
+  .findButton {
+    float: right;
+    margin-right:20px
+    
+  }
+
+  .findingButton, .hideSmall {
+    display:none;
+  }
+  
+}

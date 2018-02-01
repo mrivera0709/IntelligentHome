@@ -43201,7 +43201,6 @@ var Main = function (_Component) {
 
             return this.state.products.map(function (product) {
 
-                var amazonASIN = product.asin;
                 var subCatID = _this5.state.currentSubcategory.id;
                 console.log('SubCatID : ' + subCatID);
 
@@ -43335,17 +43334,17 @@ var Main = function (_Component) {
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'a',
-                                    { className: ' textGradient1 waves-effect waves-light btn black left20 right', target: '_blank', href: 'https://www.amazon.com/Roku-Streaming-Stick-Portable-power-packed/dp/B075XN5L53?SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=' + amazonASIN },
+                                    { className: ' textGradient1 waves-effect waves-light btn black left20 right', target: '_blank', href: 'https://smile.amazon.com/Roku-Streaming-Stick-Portable-power-packed/dp/' + product.asin + '?SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=' + product.asin },
                                     'View Product Page '
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'a',
-                                    { className: 'textGradient1 waves-effect waves-light btn black left20 right', target: '_blank', href: 'https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B075XN5L53&SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=' + amazonASIN },
+                                    { className: 'textGradient1 waves-effect waves-light btn black left20 right', target: '_blank', href: 'https://smile.amazon.com/gp/registry/wishlist/add-item.html?asin.0=' + product.asin + '&SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=' + product.asin },
                                     'Add to Wishlist '
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'a',
-                                    { className: 'textGradient1 waves-effect waves-light btn black left20 right', target: '_blank', href: 'https://www.amazon.com/review/product/B075XN5L53?SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN' + amazonASIN },
+                                    { className: 'textGradient1 waves-effect waves-light btn black left20 right', target: '_blank', href: 'https://smile.amazon.com/review/product/' + product.asin + '?SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN' + product.asin },
                                     'View Reviews '
                                 )
                             )

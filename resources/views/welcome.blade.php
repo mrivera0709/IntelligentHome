@@ -43,8 +43,8 @@
             <div class="flex-center position-ref ">
                 
                 <div class="nav-wrapper container">
-                    <a href="{{ url('/home') }}" class="btn-floating btn-large waves-effect waves-light cyan pulse findButton hoverable" style="text-transform:lowercase">start</a>
-                    <a href="{{ url('/home') }}" class="brand-logo textGradient1 font20 findingButton"> <span class="textGradient1 find">find</span>ing </a>
+                    <a href="{{ url('/home') }}" class="btn-floating btn-large waves-effect waves-light cyan pulse findButton hoverable" style="text-transform:lowercase; text-decoration : none">start</a>
+                    <a href="{{ url('/home') }}" class="brand-logo textGradient1 font20 findingButton"> <span class="textGradient1  hideSmall">find</span><span class="hideSmall">ing</span> </a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             
                     <ul id="nav-mobile" class="right hide-on-med-and-down links">
@@ -78,7 +78,7 @@
                     </div>
                         <br>
                     <div class="title font86 welcomeTitle font208">
-                        <a class="textGradient1 find" href="{{ url('/home') }}">find</a>er
+                        <a class="textGradient1 find" style="text-decoration : none" href="{{ url('/home') }}">find</a>er
                     </div>
                     
                     

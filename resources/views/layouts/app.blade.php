@@ -16,8 +16,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
     <!-- Styles -->
+    <style>
+            a:focus {
+                color: white;
+                text-decoration: none !important;
+            }
+            
+            .btn-link:focus {
+                color: white;
+                text-decoration: none !important;
+                background-color: transparent;
+            }
+            
+            a:visited {
+                text-decoration: none !important;
+            }
+    </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
+    
+
 </head>
 <body class="background">
 <header>
@@ -25,8 +44,8 @@
 
         <nav class="black">
             <div class="nav-wrapper container">
-                <a href="{{ url('/home') }}" class="brand-logo font26 white-text light"> SMART TECH <span class="textGradient1 font36">find</span>ER</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <a href="{{ url('/home') }}" class="brand-logo font26 white-text light" style="text-decoration : none"> SMART TECH <span class="textGradient1 font36">find</span>ER</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse" style="text-decoration : none"><i class="material-icons">menu</i></a>
 
                 <ul id="nav-mobile" class="right hide-on-med-and-down links">
                     <li class="textGradient2"> <a class="font16" href="{{ route('about') }}">ABOUT</a> </li>

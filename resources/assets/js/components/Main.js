@@ -107,7 +107,7 @@ export default class Main extends Component {
     renderProducts() {
         return this.state.products.map(product => {
             
-            let amazonASIN = product.asin
+            
             let subCatID = this.state.currentSubcategory.id
             console.log('SubCatID : ' + subCatID)
 
@@ -166,13 +166,13 @@ export default class Main extends Component {
                                 { product.finder_rating } </p>
                                     <br />
                                 
-                                <a className=" textGradient1 waves-effect waves-light btn black left20 right" target="_blank" href={'https://www.amazon.com/Roku-Streaming-Stick-Portable-power-packed/dp/B075XN5L53?SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=' + amazonASIN }> 
+                                <a className=" textGradient1 waves-effect waves-light btn black left20 right" target="_blank" href={'https://smile.amazon.com/Roku-Streaming-Stick-Portable-power-packed/dp/' + product.asin + '?SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=' + product.asin }> 
                                 View Product Page </a>
                                 
-                                <a className="textGradient1 waves-effect waves-light btn black left20 right" target="_blank" href={'https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B075XN5L53&SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=' + amazonASIN }> 
+                                <a className="textGradient1 waves-effect waves-light btn black left20 right" target="_blank" href={'https://smile.amazon.com/gp/registry/wishlist/add-item.html?asin.0=' + product.asin + '&SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=' + product.asin }> 
                                 Add to Wishlist </a>
                                 
-                                <a className="textGradient1 waves-effect waves-light btn black left20 right" target="_blank" href={'https://www.amazon.com/review/product/B075XN5L53?SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN' + amazonASIN }> 
+                                <a className="textGradient1 waves-effect waves-light btn black left20 right" target="_blank" href={'https://smile.amazon.com/review/product/' + product.asin + '?SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN' + product.asin }> 
                                 View Reviews </a>
                             </div>
                         </div>
