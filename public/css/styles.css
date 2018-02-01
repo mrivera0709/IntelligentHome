@@ -4,8 +4,20 @@ body {
   flex-direction: column;
 }
 
+.background {
+  background-color:#000000;
+
+}
+
 main {
   flex: 1 0 auto;
+}
+
+.container {
+  margin-left:5%;
+  margin-right:5%;
+  max-width: 100%;
+  width:90%
 }
 
 .textGradient1 {
@@ -70,6 +82,12 @@ main {
 .padding20 {
   padding-left:20px;
 }
+.left20 {
+  margin-left:20px;
+}
+.up60 {
+  padding-top:60px;
+}
 .noSidePadding {
   padding-left:0;
   padding-right:0;
@@ -115,3 +133,16 @@ main {
 .mainArea {
   padding-left:40px;
 }
+
+.menuSub {
+  cursor: pointer;
+}
+
+img {
+  width:100%
+}
+
+.ReactModal__Overlay--after-open {
+  background-color:rgb(44, 44, 44, 0.5) !important;
+}
+
