@@ -14,4 +14,4 @@ require('./bootstrap');
 
 //require('./components/Main');
 import Main from './components/Main';
-import Menu from './components/Menu';
+import Admin from './components/Admin';

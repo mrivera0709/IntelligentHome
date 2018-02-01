@@ -4,8 +4,20 @@ body {
   flex-direction: column;
 }
 
+.background {
+  background-color:#000000;
+
+}
+
 main {
   flex: 1 0 auto;
+}
+
+.container {
+  margin-left:5%;
+  margin-right:5%;
+  max-width: 100%;
+  width:90%
 }
 
 .textGradient1 {
@@ -17,13 +29,14 @@ main {
 }
 
 .textGradient2 {
-	background: -webkit-linear-gradient(bottom right, #00A691, #009BB3);
-	background: linear-gradient(bottom right, #00A691, #009BB3);
+	background: -webkit-linear-gradient(bottom right, #30FFAA, #009BDB, #009BDB);
+	background: linear-gradient(bottom right, #30FFAA, #009BDB, #009BDB);
 	-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
-
+.font12 {
+  font-size:12px !important;
+}
 .font16 {
   font-size:16px !important;
 }
@@ -33,10 +46,12 @@ main {
 .font26 {
   font-size:26px !important;
 }
+.font27 {
+  font-size:27px !important;
+}
 .font36 {
   font-size:36px !important;
 }
-
 .font46 {
   font-size:46px !important;
 }
@@ -50,11 +65,9 @@ main {
 .bold {
   font-weight: bold
 }
-
 .normal {
   font-weight: normal
 }
-
 .light {
   font-weight: lighter
 }
@@ -65,6 +78,19 @@ main {
 
 .w100 {
   width:100%;
+}
+.padding20 {
+  padding-left:20px;
+}
+.left20 {
+  margin-left:20px;
+}
+.up60 {
+  padding-top:60px;
+}
+.noSidePadding {
+  padding-left:0;
+  padding-right:0;
 }
 
 .welcomeTitle {
@@ -107,3 +133,16 @@ main {
 .mainArea {
   padding-left:40px;
 }
+
+.menuSub {
+  cursor: pointer;
+}
+
+img {
+  width:100%
+}
+
+.ReactModal__Overlay--after-open {
+  background-color:rgb(44, 44, 44, 0.5) !important;
+}
+

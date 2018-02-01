@@ -19,7 +19,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
-<body class="black">
+<body class="background">
 <header>
     <div id="app">
 
@@ -53,11 +53,11 @@
 
 <footer class="page-footer black">
     <div class="footer-copyright">
-        <div class="container textGradient2 bold">
+        <div class="container textGradient2 font12">
         © 2018 COPYRIGHT | MISAEL RIVERA 
-        <a class="font16" href="{{ route('about') }}">ABOUT</a>
-        <a class="font16" href="{{ route('privacy') }}">PRIVACY</a>
-        <a class="font16" href="{{ route('affiliate') }}">AFFILIATE PROGRAM</a>
+        <a class="font12 padding20" href="{{ route('about') }}">ABOUT</a>
+        <a class="font12 padding20" href="{{ route('privacy') }}">PRIVACY</a>
+        <a class="font12 padding20" href="{{ route('affiliate') }}">AFFILIATE PROGRAM</a>
         
         </div>
     </div>
@@ -71,6 +71,7 @@
         $(".button-collapse").sideNav();
         $('.collapsible').collapsible();
         $('.materialboxed').materialbox();
+        $('.modal').modal();
     })</script>
     
     
