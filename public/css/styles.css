@@ -2,24 +2,20 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color:#000000;
 }
-
 .background {
   background-color:#000000;
-
 }
-
 main {
   flex: 1 0 auto;
 }
-
 .container {
   margin-left:5%;
   margin-right:5%;
   max-width: 100%;
   width:90%
 }
-
 .textGradient1 {
 	background: -webkit-linear-gradient(bottom right, #30FFAA, #009BDB);
 	background: linear-gradient(bottom right, #30FFAA, #009BDB);
@@ -27,7 +23,6 @@ main {
   -webkit-text-fill-color: transparent;
   font-weight:light;
 }
-
 .textGradient2 {
 	background: -webkit-linear-gradient(bottom right, #30FFAA, #009BDB, #009BDB);
 	background: linear-gradient(bottom right, #30FFAA, #009BDB, #009BDB);
@@ -61,7 +56,6 @@ main {
 .font208 {
   font-size:208px !important;
 }
-
 .bold {
   font-weight: bold
 }
@@ -71,11 +65,12 @@ main {
 .light {
   font-weight: lighter
 }
-
 .pcolor {
   color:#CFEFEC
 }
-
+.noMargin {
+  margin:0px;
+}
 .w100 {
   width:100%;
 }
@@ -92,6 +87,21 @@ main {
   padding-left:0;
   padding-right:0;
 }
+.halfSidePadding {
+  padding-left:7.5px;
+  padding-right:7.5px;
+}
+.productCard {
+  padding:40px;
+}
+.containerFix {
+  margin-right:0px !important;
+  width:95%;
+}
+.generalInfo {
+  line-height:22px;
+  padding:6px;
+}
 
 .welcomeTitle {
   font-weight:lighter;
@@ -99,26 +109,35 @@ main {
   color:#CFEFEC;
   line-height:90px;
 }
-
 .titleDiv {
-  padding-left:25%;
+  padding-left:30%;
 }
-
 .findButton {
   background: -webkit-linear-gradient(bottom right, #00A691, #009BB3);
   background: linear-gradient(bottom right, #00A691, #009BB3);
   color:black;
   font-weight:bold;
   font-size:20px;
-  
 }
-
 .findingButton a:focus{
   color:white;
 }
-
+.nav-wrapper {
+  margin-top:30px;
+  margin-bottom:30px;
+}
+.mainTag {
+  margin-top:30px !important;
+}
 .menuButton {
   background-color: linear-gradient( right, #00A691, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
+.whiteBack {
+  background-color:white;
+}
+.blackBack {
+  background-color:black !important;
 }
 
 .menuSub {
@@ -132,7 +151,7 @@ main {
 }
 
 .mainArea {
-  padding-left:40px;
+  
 }
 
 .menuSub {
@@ -173,7 +192,6 @@ a:visited {
   .findButton {
     float: right;
     margin-right:20px
-    
   }
 }
 
@@ -185,7 +203,6 @@ a:visited {
     font-size:175px !important; 
   }
 
-
   .title {
     font-size:70px;
   }
@@ -195,7 +212,6 @@ a:visited {
   }
 
   .welcomeTitle {
-
     line-height:70px;
   }
 
@@ -206,7 +222,6 @@ a:visited {
   .findButton {
     float: right;
     margin-right:20px
-    
   }
 
   .findingButton, .hideSmall {
@@ -218,8 +233,6 @@ a:visited {
 
 
 @media only screen and (max-width: 768px) {
-  
-
 
   .font208 {
     font-size:138px !important; 
@@ -234,7 +247,6 @@ a:visited {
   }
 
   .welcomeTitle {
-
     line-height:52px;
   }
 
@@ -244,8 +256,7 @@ a:visited {
 
   .findButton {
     float: right;
-    margin-right:20px
-    
+    margin-right:20px;
   }
 
   .findingButton, .hideSmall {

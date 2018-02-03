@@ -43096,7 +43096,6 @@ var Main = function (_Component) {
             modalIsOpen: false
         };
         _this.openModal = _this.openModal.bind(_this);
-        _this.afterOpenModal = _this.afterOpenModal.bind(_this);
         _this.closeModal = _this.closeModal.bind(_this);
         return _this;
     }
@@ -43110,23 +43109,54 @@ var Main = function (_Component) {
                 return response.json();
             }).then(function (products) {
                 _this2.setState({ products: products });
-                console.log('Products : ');
-                console.log(products);
+                /*console.log('Products : ');
+                console.log(products);*/
             });
             fetch('/api/category').then(function (response) {
                 return response.json();
             }).then(function (categories) {
                 _this2.setState({ categories: categories });
-                console.log('Categories : ');
-                console.log(categories);
+                /*console.log('Categories : ');
+                console.log(categories);*/
             });
             fetch('/api/subcategory').then(function (response) {
                 return response.json();
             }).then(function (subcategories) {
                 _this2.setState({ subcategories: subcategories });
-                console.log('Subcategories : ');
-                console.log(subcategories);
+                /*console.log('Subcategories : ');
+                console.log(subcategories);*/
             });
+        }
+    }, {
+        key: 'handleSubClick',
+        value: function handleSubClick(subcategory) {
+            this.setState({
+                currentSubcategory: subcategory,
+                currentProduct: null
+            });
+        }
+    }, {
+        key: 'handleCatClick',
+        value: function handleCatClick(category) {
+            this.setState({ currentCategory: category });
+        }
+    }, {
+        key: 'handleClick',
+        value: function handleClick(product) {
+            this.setState({
+                currentProduct: product,
+                currentSubcategory: 1
+            });
+        }
+    }, {
+        key: 'openModal',
+        value: function openModal() {
+            this.setState({ modalIsOpen: true });
+        }
+    }, {
+        key: 'closeModal',
+        value: function closeModal() {
+            this.setState({ modalIsOpen: false });
         }
     }, {
         key: 'renderSubCategory',
@@ -43136,23 +43166,20 @@ var Main = function (_Component) {
             return this.state.subcategories.map(function (subcategory) {
                 /*console.log('Category Id :' + currentCategory)
                 console.log('Subcategory Id :' + subcategory.category_id)*/
-                if (currentCategory === subcategory.category_id) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'collapsible-body white menuSub' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'span',
-                        { key: subcategory.id, onClick: function onClick() {
-                                return _this3.handleSubClick(subcategory);
-                            } },
-                        subcategory.subcategory_name
-                    )
-                );
+                if (currentCategory === subcategory.category_id) {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'collapsible-body white menuSub', key: subcategory.id },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'span',
+                            { onClick: function onClick() {
+                                    return _this3.handleSubClick(subcategory);
+                                } },
+                            subcategory.subcategory_name
+                        )
+                    );
+                }
             });
-        }
-    }, {
-        key: 'handleSubClick',
-        value: function handleSubClick(subcategory) {
-            this.setState({ currentSubcategory: subcategory });
         }
     }, {
         key: 'renderCategory',
@@ -43164,10 +43191,10 @@ var Main = function (_Component) {
                 /*console.log('CatID : ' + catID)*/
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'li',
-                    null,
+                    { key: category.id },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'collapsible-header menuButton font20 textGradient1', key: category.id, onClick: function onClick() {
+                        { className: 'collapsible-header menuButton font20 textGradient1', onClick: function onClick() {
                                 return _this4.handleCatClick(category);
                             } },
                         category.category_name
@@ -43177,191 +43204,57 @@ var Main = function (_Component) {
             });
         }
     }, {
-        key: 'handleCatClick',
-        value: function handleCatClick(category) {
-            this.setState({ currentCategory: category });
-        }
-    }, {
-        key: 'openModal',
-        value: function openModal() {
-            this.setState({ modalIsOpen: true });
-        }
-    }, {
-        key: 'afterOpenModal',
-        value: function afterOpenModal() {}
-    }, {
-        key: 'closeModal',
-        value: function closeModal() {
-            this.setState({ modalIsOpen: false });
-        }
-    }, {
         key: 'renderProducts',
         value: function renderProducts() {
             var _this5 = this;
 
             return this.state.products.map(function (product) {
-
                 var subCatID = _this5.state.currentSubcategory.id;
-                console.log('SubCatID : ' + subCatID);
-
-                if (subCatID === product.subcategory_id) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'col s12 m4', key: product.id },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'p',
-                        { className: 'textGradient1' },
-                        ' ',
-                        product.product_brand
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'h4',
-                        { className: 'header pcolor', onClick: _this5.openModal },
-                        product.product_name,
-                        ' '
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                /*console.log('SubCatID : ' + subCatID)*/
+                if (subCatID === product.subcategory_id) {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'card horizontal onClick={this.openModal}' },
+                        { className: 'col-md-4', key: product.id },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'p',
+                            { className: 'textGradient1' },
+                            ' ',
+                            product.product_brand
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'h4',
+                            { className: 'header pcolor', onClick: function onClick() {
+                                    return _this5.handleClick(product);
+                                } /*{this.openModal}*/ },
+                            product.product_name,
+                            ' '
+                        ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'row' },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'col-md-12' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { onClick: _this5.openModal, src: product.image_url })
-                            )
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_5_react_modal___default.a,
-                        {
-                            isOpen: _this5.state.modalIsOpen,
-                            onAfterOpen: _this5.afterOpenModal,
-                            onRequestClose: _this5.closeModal,
-                            style: modalStyle,
-                            contentLabel: 'Example Modal' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'div',
-                            { className: 'container modalGrid' },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'row' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'button',
-                                    { className: ' textGradient1 waves-effect waves-light btn black right', onClick: _this5.closeModal },
-                                    'Close'
-                                )
-                            ),
+                            { className: 'card horizontal', onClick: function onClick() {
+                                    return _this5.handleClick(product);
+                                } },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'row' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'div',
-                                    { className: 'col-md-6' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'div',
-                                        { className: 'col-md-12' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { onClick: _this5.openModal, src: product.image_url })
-                                    )
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'div',
-                                    { className: 'col-md-6' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'div',
-                                        null,
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'p',
-                                            { className: 'textGradient1' },
-                                            ' ',
-                                            product.product_brand
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'div',
-                                        null,
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'h4',
-                                            { className: 'header font26', onClick: _this5.openModal },
-                                            product.product_name,
-                                            ' '
-                                        )
-                                    )
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'row' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'p',
-                                    null,
-                                    ' ',
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'span',
-                                        { className: ' textGradient1' },
-                                        'Details :  ',
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                                        ' '
-                                    ),
-                                    product.details,
-                                    ' '
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'p',
-                                    { className: 'right-align' },
-                                    ' ',
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'span',
-                                        { className: ' textGradient1' },
-                                        'Competitive Price Range : '
-                                    ),
-                                    product.price,
-                                    ' '
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'p',
-                                    { className: 'right-align' },
-                                    ' ',
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'span',
-                                        { className: ' textGradient1' },
-                                        'Our Rating :  '
-                                    ),
-                                    product.finder_rating,
-                                    ' '
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { className: ' textGradient1 waves-effect waves-light btn black left20 right', target: '_blank', href: 'https://smile.amazon.com/Roku-Streaming-Stick-Portable-power-packed/dp/' + product.asin + '?SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=' + product.asin },
-                                    'View Product Page '
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { className: 'textGradient1 waves-effect waves-light btn black left20 right', target: '_blank', href: 'https://smile.amazon.com/gp/registry/wishlist/add-item.html?asin.0=' + product.asin + '&SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=' + product.asin },
-                                    'Add to Wishlist '
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { className: 'textGradient1 waves-effect waves-light btn black left20 right', target: '_blank', href: 'https://smile.amazon.com/review/product/' + product.asin + '?SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN' + product.asin },
-                                    'View Reviews '
+                                    { className: 'col-md-12' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', {
+                                        onClick: function onClick() {
+                                            return _this5.handleClick(product);
+                                        },
+                                        src: product.image_url })
                                 )
                             )
                         )
-                    )
-                );
+                    );
+                };
             });
-        }
-    }, {
-        key: 'handleClick',
-        value: function handleClick(product) {
-            this.setState({ currentProduct: product });
         }
     }, {
         key: 'render',
         value: function render() {
-
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
@@ -43387,21 +43280,15 @@ var Main = function (_Component) {
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'col-md-10 mainArea' },
-                        this.renderProducts(),
+                        { className: 'col-md-10 noSidePadding' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'row' },
+                            { className: 'containerFix container ' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
-                                { className: ' col-md-12 w100 pcolor light font26 up60' },
-                                ' Browse through our menu to begin ',
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'span',
-                                    { className: 'textGradient1 pcolor' },
-                                    'find'
-                                ),
-                                'ing '
+                                { className: 'row' },
+                                this.renderProducts(),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Product__["a" /* default */], { product: this.state.currentProduct })
                             )
                         )
                     )
@@ -43414,7 +43301,7 @@ var Main = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* unused harmony default export */ var _unused_webpack_default_export = (Main);
-
+;
 
 if (document.getElementById('root')) {
     __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Main, null), document.getElementById('root'));
@@ -76153,6 +76040,8 @@ exports.default = Toast;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_materialize__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_materialize___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_materialize__);
+var _this = this;
+
 
 
 
@@ -76172,39 +76061,124 @@ var ProductCard = function ProductCard(_ref) {
   //Else, display the product data
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'div',
-    null,
+    { className: 'productCard whiteBack' },
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'h2',
-      null,
-      ' ',
-      product.product_name,
-      ' '
+      'div',
+      { className: 'row' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'col-md-12' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          { className: 'textGradient1 noMargin font20 bold' },
+          ' ',
+          product.product_brand
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h4',
+          { className: 'header font26 ', onClick: _this.openModal },
+          ' ',
+          product.product_name,
+          ' '
+        )
+      )
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'p',
-      null,
-      ' ',
-      product.details,
-      ' '
+      'div',
+      { className: 'row' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'col-md-12' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          { className: ' left generalInfo' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'span',
+            { className: ' textGradient1 bold' },
+            'COMPETITIVE PRICE RANGE : '
+          ),
+          ' ',
+          product.price,
+          ' '
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          { className: ' left generalInfo left20' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'span',
+            { className: ' textGradient1 bold' },
+            'OUR RATING : '
+          ),
+          ' ',
+          product.finder_rating,
+          ' '
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'a',
+          { className: ' textGradient1 waves-effect waves-light btn left20 right black blackBack bold', target: '_blank', href: 'https://smile.amazon.com/Roku-Streaming-Stick-Portable-power-packed/dp/' + product.asin + '?SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=' + product.asin },
+          'View Product Page '
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'a',
+          { className: 'textGradient1 waves-effect waves-light btn  left20 right black blackBack bold', target: '_blank', href: 'https://smile.amazon.com/gp/registry/wishlist/add-item.html?asin.0=' + product.asin + '&SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=' + product.asin },
+          'Add to Wishlist '
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'a',
+          { className: 'textGradient1 waves-effect waves-light btn  left20 right black blackBack bold', target: '_blank', href: 'https://smile.amazon.com/review/product/' + product.asin + '?SubscriptionId=AKIAJMGK2PQDBRMQM2XQ&tag=intelligen044-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN' + product.asin },
+          'View Reviews '
+        )
+      )
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'h3',
-      null,
-      ' Status ',
-      product.finder_review ? 'Available' : 'Out of stock',
-      ' '
-    ),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'h3',
-      null,
-      ' Price : ',
-      product.price,
-      ' '
+      'div',
+      { className: 'row' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'col-md-5' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { onClick: _this.openModal, src: product.image_url })
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'col-md-7' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          { className: '' },
+          ' ',
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'span',
+            { className: 'textGradient1 bold' },
+            ' Details : ',
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            ' '
+          ),
+          product.details,
+          ' '
+        ),
+        ' ',
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          { className: '' },
+          ' ',
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'span',
+            { className: ' textGradient1 bold' },
+            'Our Thoughts : ',
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            ' '
+          ),
+          product.finder_review,
+          ' '
+        ),
+        ' ',
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
+      )
     )
   );
 };
 
-/* unused harmony default export */ var _unused_webpack_default_export = (ProductCard);
+/* harmony default export */ __webpack_exports__["a"] = (ProductCard);
 
 /***/ }),
 /* 275 */,
